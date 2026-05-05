@@ -815,7 +815,7 @@ function Game2_Gacha({ coins, setCoins, inventory, setInventory, inflation, setI
 }
 
 // -- GAME 4: INVENTORY & SHOP --
-function Game4_InventoryShop({ coins, setCoins, inventory, setInventory, activeBuff, setActiveBuff }: any) {
+function Game4_InventoryShop({ coins, setCoins, inventory, setInventory, activeBuff, setActiveBuff, clickPower, setClickPower, autoPower, setAutoPower, inflation, setInflation }: any) {
   const [tab, setTab] = useState<'inventory' | 'shop'>('inventory');
   
   const useItem = (item: any) => {
