@@ -396,16 +396,16 @@ function Page2({ onNext, onBack }: { onNext: () => void, onBack: () => void }) {
 function Page3({ onBack, coins, setCoins, inventory, setInventory, clickPower, setClickPower, autoPower, setAutoPower, upgrades, setUpgrades, activeBuff, setActiveBuff, bankBalance, setBankBalance, portfolio, setPortfolio, inflation, setInflation, franchises, setFranchises }: any) {
   return (
     <div className="page-transition">
-      <div className="fixed top-4 right-4 bg-black border-4 border-yellow-400 text-yellow-400 px-4 py-2 md:px-6 md:py-3 rounded-full font-impact text-xl md:text-3xl shadow-[4px_4px_0px_0px_rgba(255,214,0,1)] z-[100] animate-bounce whitespace-nowrap">
-        💰 {Math.floor(coins).toLocaleString()} COIN
+      <div className="fixed top-4 right-4 md:right-6 border-[4px] border-[var(--black)] p-3 md:px-6 md:py-3 rounded-[24px] font-impact text-lg sm:text-lg md:text-2xl shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] z-[100] animate-bounce max-w-[60vw] md:max-w-md break-all leading-tight text-right flex flex-col justify-center" style={{ backgroundColor: 'var(--yellow)', color: 'var(--black)' }}>
+        <span className="whitespace-normal">💰 {Math.floor(coins).toLocaleString()} COIN</span>
       </div>
 
-      <div className="gallery-hero md:col-span-12 bg-black text-white !pb-12 relative overflow-hidden">
-        <div className="gallery-title z-10 relative drop-shadow-[4px_4px_0px_rgba(232,0,29,1)]">
-          <span className="line-red text-yellow-400 drop-shadow-none">ARCADE</span><br />
-          <span className="text-white font-impact tracking-wider">EDITION.</span>
+      <div className="gallery-hero md:col-span-12 !pb-12 relative overflow-hidden" style={{ backgroundColor: 'var(--black)', color: 'var(--white)' }}>
+        <div className="gallery-title z-10 relative drop-shadow-[4px_4px_0px_rgba(255,107,107,1)]">
+          <span className="text-[var(--red)] drop-shadow-none">ARCADE</span><br />
+          <span className="text-[var(--yellow)] font-impact tracking-wider">EDITION.</span>
         </div>
-        <p className="font-mono text-xs opacity-80 mt-6 tracking-widest uppercase z-10 relative">
+        <p className="font-mono text-sm leading-relaxed opacity-80 mt-6 tracking-widest uppercase z-10 relative text-[var(--white)]">
           Kumpulkan COIN dari mini-game dan gacha sampai lemes!
         </p>
       </div>
@@ -418,8 +418,8 @@ function Page3({ onBack, coins, setCoins, inventory, setInventory, clickPower, s
       <Game2_Gacha coins={coins} setCoins={setCoins} inventory={inventory} setInventory={setInventory} inflation={inflation} setInflation={setInflation} />
       <Game4_InventoryShop coins={coins} setCoins={setCoins} inventory={inventory} setInventory={setInventory} activeBuff={activeBuff} setActiveBuff={setActiveBuff} clickPower={clickPower} setClickPower={setClickPower} autoPower={autoPower} setAutoPower={setAutoPower} inflation={inflation} setInflation={setInflation} />
 
-      <div className="back-nav bg-[#f2f2f2] md:col-span-12">
-        <div className="back-note text-black">udah capek mainnya? <span>haha</span>.</div>
+      <div className="back-nav md:col-span-12" style={{ backgroundColor: 'var(--white)' }}>
+        <div className="back-note">udah capek mainnya? <span style={{ backgroundColor: 'var(--yellow)', padding: '0 4px' }}>haha</span>.</div>
         <button className="btn-back" onClick={onBack}>← Back to Photos</button>
       </div>
     </div>
@@ -499,18 +499,18 @@ function Game3_Clicker({ coins, setCoins, clickPower, setClickPower, autoPower, 
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#74b9ff] flex flex-col md:flex-row gap-8 items-stretch pt-20">
-      <div className="flex-1 flex flex-col items-center border-4 border-black bg-white rounded-3xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
-        <h2 className="font-impact text-4xl mb-2 text-center text-blue-600 tracking-wider">PABRIK COIN LILIN</h2>
-        <p className="font-mono text-xs opacity-60 mb-6 text-center text-black font-bold uppercase border-b-2 border-black pb-1">Klik secepat mungkin! Upgrade usahamu.</p>
+    <div className="section md:col-span-12 flex flex-col md:flex-row gap-8 items-stretch pt-12" style={{ backgroundColor: 'var(--blue)' }}>
+      <div className="flex-1 flex flex-col items-center border-[4px] border-[var(--black)] rounded-[24px] p-6 shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] relative overflow-hidden" style={{ backgroundColor: 'var(--white)' }}>
+        <h2 className="font-impact text-4xl mb-2 mt-2 text-center tracking-wider text-[var(--black)]">PABRIK COIN LILIN</h2>
+        <p className="font-mono text-sm leading-relaxed opacity-60 mb-6 text-center text-[var(--black)] font-bold uppercase border-b-[4px] border-dashed border-[var(--black)] pb-4">Klik secepat mungkin! Upgrade usahamu.</p>
         
         {currentBuff > 1 && (
-          <div className="bg-red-500 text-white font-impact border-4 border-black rounded-lg px-4 py-2 mb-4 animate-pulse shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-center">
+          <div className="font-impact border-[4px] border-[var(--black)] rounded-lg px-4 py-2 mb-4 animate-pulse shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] text-center text-[var(--white)]" style={{ backgroundColor: 'var(--red)' }}>
             🔥 BUFF AKTIF: {activeBuff?.type}<br/>({currentBuff}x Coin & Score Overthinking!) 🔥
           </div>
         )}
 
-        <div className="text-3xl font-impact bg-yellow-400 px-6 py-2 border-4 border-black rounded-full mb-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center gap-2">
+        <div className="text-2xl sm:text-3xl font-impact px-6 py-3 border-[4px] border-[var(--black)] rounded-full mb-8 shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] flex items-center justify-center gap-2 text-[var(--black)] whitespace-normal break-all text-center leading-none max-w-full" style={{ backgroundColor: 'var(--yellow)' }}>
           +{(displayAutoPower * currentBuff).toLocaleString()} COIN/dtk
         </div>
         
@@ -518,8 +518,8 @@ function Game3_Clicker({ coins, setCoins, clickPower, setClickPower, autoPower, 
           id="flame-btn"
           onMouseDown={handleTap}
           onTouchStart={handleTap}
-          className="w-48 h-48 bg-red-500 rounded-full border-8 border-black flex items-center justify-center text-7xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-transform select-none mb-8 cursor-pointer relative"
-          style={{ touchAction: 'none' }}
+          className="w-48 h-48 rounded-full border-[8px] border-[var(--black)] flex items-center justify-center text-7xl shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] transition-transform select-none mb-8 cursor-pointer relative text-[var(--white)]"
+          style={{ touchAction: 'none', backgroundColor: 'var(--red)' }}
         >
           <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 1 }}>🔥</motion.div>
         </button>
@@ -532,7 +532,7 @@ function Game3_Clicker({ coins, setCoins, clickPower, setClickPower, autoPower, 
               animate={{ opacity: 0, y: c.y - 120, scale: 1.5 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="absolute pointer-events-none font-impact text-4xl text-yellow-400 drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]"
+              className="absolute pointer-events-none font-impact text-4xl text-[var(--black)] drop-shadow-[2px_2px_0px_rgba(255,255,255,1)]"
             >
               {c.text}
             </motion.div>
@@ -548,17 +548,25 @@ function Game3_Clicker({ coins, setCoins, clickPower, setClickPower, autoPower, 
               key={u.id}
               onClick={() => buyUpgrade(u.id)}
               disabled={coins < actualCost}
-              className={`flex items-center gap-4 p-4 border-4 border-black rounded-2xl text-left transition-all ${coins >= actualCost ? 'bg-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}
+              className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-4 p-4 lg:p-6 border-[4px] border-[var(--black)] rounded-[24px] text-left transition-all ${coins >= actualCost ? 'hover:-translate-y-1 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`}
+              style={{ 
+                backgroundColor: 'var(--white)',
+                boxShadow: coins >= actualCost ? '4px 4px 0px 0px rgba(45,45,45,1)' : 'none'
+              }}
             >
-              <div className="text-4xl bg-gray-100 w-16 h-16 rounded-xl border-2 border-black flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]">
-                {u.icon}
-              </div>
-              <div className="flex-1">
-                <h3 className="font-impact text-xl tracking-wide">{u.name} <span className="text-sm bg-black text-white px-2 py-0.5 rounded ml-2 font-mono">Lv.{u.count}</span></h3>
-                <p className="font-mono text-xs opacity-70 mt-1 uppercase font-bold text-blue-600">{u.desc}</p>
-              </div>
-              <div className="font-impact text-xl text-yellow-500 bg-black px-3 py-1 rounded-full border-2 border-yellow-400 shadow-[2px_2px_0px_rgba(255,214,0,1)]">
-                💰 {actualCost.toLocaleString()}
+              <div className="flex items-start sm:items-center gap-4 w-full">
+                <div className="text-4xl w-16 h-16 rounded-xl border-[4px] border-[var(--black)] flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0px_rgba(45,45,45,1)]" style={{ backgroundColor: 'var(--bg-color)' }}>
+                  {u.icon}
+                </div>
+                <div className="flex-1 flex flex-col gap-2 min-w-0">
+                  <div>
+                    <h3 className="font-impact text-xl tracking-wide text-[var(--black)]">{u.name} <span className="text-xs px-2 py-0.5 rounded ml-2 font-mono leading-none inline-block align-middle" style={{ backgroundColor: 'var(--black)', color: 'var(--white)' }}>Lv.{u.count}</span></h3>
+                    <p className="font-mono text-sm leading-relaxed opacity-70 mt-1 uppercase font-bold break-words" style={{ color: 'var(--blue)' }}>{u.desc}</p>
+                  </div>
+                  <div className="font-impact text-lg sm:text-xl px-4 py-1.5 rounded-xl border-[2px] shadow-[2px_2px_0px_rgba(45,45,45,1)] self-start max-w-full break-all leading-none" style={{ backgroundColor: 'var(--yellow)', color: 'var(--black)', borderColor: 'var(--black)' }}>
+                    💰 {actualCost.toLocaleString()}
+                  </div>
+                </div>
               </div>
             </button>
           );
@@ -651,36 +659,36 @@ function Game1_Overthinking({ coins, setCoins, activeBuff }: any) {
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#ffeea8] flex flex-col items-center">
+    <div className="section md:col-span-12 flex flex-col items-center" style={{ backgroundColor: 'var(--yellow)' }}>
       <div className="w-full flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <div className="text-center md:text-left">
-          <h2 className="font-impact text-4xl uppercase text-black tracking-wider">PUKUL OVERTHINKING</h2>
-          <p className="font-mono text-sm opacity-80 mt-1 font-bold">Hajar setan merah (+5 Coin), hindari es biru (-10 Coin)!</p>
+          <h2 className="font-impact text-4xl uppercase tracking-wider text-[var(--black)]">PUKUL OVERTHINKING</h2>
+          <p className="font-mono text-base leading-relaxed opacity-80 mt-1 font-bold text-[var(--black)]">Hajar setan merah (+5 Coin), hindari es biru (-10 Coin)!</p>
         </div>
-        <div className="flex gap-4">
-          <div className="bg-black text-white px-6 py-2 rounded-full font-impact text-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black tracking-widest">
-            ⏱ {timeLeft}S
+        <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="px-4 md:px-6 py-2 min-w-[100px] flex justify-center items-center gap-2 rounded-[16px] font-impact text-2xl shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] border-[2px] tracking-wider text-[var(--white)]" style={{ backgroundColor: 'var(--black)', borderColor: 'var(--black)' }}>
+            <span>⏱</span> <span>{timeLeft}S</span>
           </div>
-          <div className="bg-red-500 text-white px-6 py-2 rounded-full font-impact text-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black tracking-widest">
-            💀 {score}
+          <div className="px-4 md:px-6 py-2 min-w-[100px] flex justify-center items-center gap-2 rounded-[16px] font-impact text-2xl shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] border-[2px] tracking-wider text-[var(--white)]" style={{ backgroundColor: 'var(--red)', borderColor: 'var(--black)' }}>
+            <span>💀</span> <span>{score}</span>
           </div>
         </div>
       </div>
 
-      <div id="whack-container" className="relative w-full h-[400px] border-[6px] border-black rounded-3xl bg-white overflow-hidden cursor-crosshair shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjEpIi8+PC9zdmc+')]">
+      <div id="whack-container" className="relative w-full h-[400px] border-[6px] rounded-[32px] overflow-hidden cursor-crosshair shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0icmdiYSgwLDAsMCwwLjEpIi8+PC9zdmc+')]" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>
         {!isPlaying && timeLeft === 0 && score > 0 && (
-          <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center z-20 text-white p-6 text-center">
-            <motion.h3 initial={{scale:0}} animate={{scale:1}} className="font-impact text-5xl md:text-7xl text-yellow-400 mb-2 drop-shadow-[4px_4px_0px_rgba(232,0,29,1)]">WAKTU HABIS</motion.h3>
-            <p className="font-mono text-xl mb-8 uppercase text-gray-300 font-bold border-b-2 border-white pb-2 inline-block">Score Akhir: {score} | Cuan: {coinsGained} Coin</p>
-            <button onClick={startGame} className="btn-main !bg-red-500 !text-white text-2xl px-10 py-5"><span>Main Lagi 🎮</span></button>
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6 text-center" style={{ backgroundColor: 'rgba(45,45,45,0.95)' }}>
+            <motion.h3 initial={{scale:0}} animate={{scale:1}} className="font-impact text-5xl md:text-7xl mb-2 drop-shadow-[4px_4px_0px_rgba(255,107,107,1)] text-[var(--yellow)]">WAKTU HABIS</motion.h3>
+            <p className="font-mono text-xl mb-8 uppercase font-bold border-b-[4px] border-dashed border-[var(--white)] pb-2 inline-block text-[var(--white)]">Score Akhir: {score} | Cuan: {coinsGained} Coin</p>
+            <button onClick={startGame} className="btn-main text-2xl px-10 py-5" style={{ backgroundColor: 'var(--red)', color: 'var(--white)' }}><span>Main Lagi 🎮</span></button>
           </div>
         )}
         
         {!isPlaying && score === 0 && (
-          <div className="absolute inset-x-8 inset-y-8 md:inset-x-20 md:inset-y-20 flex flex-col items-center justify-center z-20 bg-yellow-400 border-[6px] border-black rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 text-center">
-            <h3 className="font-impact text-4xl mb-4 text-black uppercase">Pembersihan Pikiran</h3>
-            <p className="font-mono text-sm uppercase font-bold text-gray-800 mb-8 max-w-sm">Siapkan jari jemari. Jangan klik yang biru atau duitmu dikurangin 10 Coin bro.</p>
-            <button onClick={startGame} className="btn-main !bg-black !text-white text-2xl hover:!text-yellow-400"><span>START SURVIVAL 🔥</span></button>
+          <div className="absolute inset-x-8 inset-y-8 md:inset-x-20 md:inset-y-20 flex flex-col items-center justify-center z-20 border-[6px] rounded-[32px] shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] p-6 text-center text-[var(--black)]" style={{ backgroundColor: 'var(--yellow)', borderColor: 'var(--black)' }}>
+            <h3 className="font-impact text-4xl mb-4 uppercase">Pembersihan Pikiran</h3>
+            <p className="font-mono text-base leading-relaxed uppercase font-bold text-gray-800 mb-8 max-w-sm" style={{ opacity: 0.8 }}>Siapkan jari jemari. Jangan klik yang biru atau duitmu dikurangin 10 Coin bro.</p>
+            <button onClick={startGame} className="btn-main text-2xl hover:!text-[var(--yellow)] text-[var(--white)]" style={{ backgroundColor: 'var(--black)' }}><span>START SURVIVAL 🔥</span></button>
           </div>
         )}
 
@@ -693,9 +701,14 @@ function Game1_Overthinking({ coins, setCoins, activeBuff }: any) {
               exit={{ scale: 0 }}
               onMouseDown={(e) => hitTarget(t.id, t.type, e)}
               onTouchStart={(e) => hitTarget(t.id, t.type, e)}
-              style={{ top: `${t.y}%`, left: `${t.x}%`, touchAction: 'none' }}
-              className={`absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-black flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-impact leading-[0.9] tracking-tight hover:brightness-110 active:scale-90 transition-all
-                ${t.type === 'bad' ? 'w-24 h-24 md:w-28 md:h-28 bg-red-600 text-white animate-pulse text-lg md:text-xl' : 'w-20 h-20 md:w-24 md:h-24 bg-blue-400 text-white text-sm md:text-base'}`}
+              style={{ 
+                top: `${t.y}%`, left: `${t.x}%`, touchAction: 'none',
+                backgroundColor: t.type === 'bad' ? 'var(--red)' : 'var(--blue)',
+                color: 'var(--white)',
+                borderColor: 'var(--black)' 
+              }}
+              className={`absolute transform -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] font-impact leading-[0.9] tracking-tight hover:brightness-110 active:scale-90 transition-all
+                ${t.type === 'bad' ? 'w-24 h-24 md:w-28 md:h-28 animate-pulse text-lg md:text-xl' : 'w-20 h-20 md:w-24 md:h-24 text-sm md:text-base'}`}
             >
               {t.type === 'bad' ? <><span className="text-3xl mb-1">👿</span><br/>OVER<br/>THINK</> : <><span className="text-2xl mb-1">🧊</span><br/>CHILL</>}
             </motion.button>
@@ -765,27 +778,41 @@ function Game2_Gacha({ coins, setCoins, inventory, setInventory, inflation, setI
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#ff6b6b] flex flex-col lg:flex-row gap-8 items-stretch pt-20">
-       <div className="flex-1 bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center text-center">
-         <h2 className="font-impact text-5xl mb-2 text-black tracking-wider drop-shadow-sm">GACHA AMPAS</h2>
-         <p className="font-mono text-xs opacity-80 mb-8 border-b-2 border-black pb-2 inline-block font-bold">Habiskan Coin-mu demi barang fiktif.</p>
+    <div className="section md:col-span-12 flex flex-col lg:flex-row gap-8 items-stretch pt-20" style={{ backgroundColor: 'var(--red)' }}>
+       <div className="flex-1 border-[4px] rounded-[32px] p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] flex flex-col items-center text-center" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>
+         <h2 className="font-impact text-5xl mb-2 tracking-wider drop-shadow-sm text-[var(--black)]">GACHA AMPAS</h2>
+         <p className="font-mono text-sm leading-relaxed opacity-80 mb-8 border-b-[4px] pb-2 inline-block font-bold text-[var(--black)]" style={{ borderColor: 'var(--black)', borderStyle: 'dashed' }}>Habiskan Coin-mu demi barang fiktif.</p>
          
-         <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full justify-center">
+         <div className="flex flex-col sm:flex-row gap-6 mt-4 mb-12 w-full justify-center">
            <button 
              onClick={pull1} disabled={coins < Math.floor(100 * inflation) || isPulling}
-             className={`w-full sm:w-[160px] py-4 rounded-2xl border-4 border-black font-impact text-xl transition-all ${coins >= Math.floor(100 * inflation) && !isPulling ? 'bg-yellow-400 hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}
+             className={`w-full sm:w-[180px] sm:min-w-0 md:min-w-[180px] lg:w-auto px-6 py-5 rounded-[24px] border-[4px] font-impact text-2xl transition-all leading-none flex flex-col items-center justify-center gap-2 ${coins >= Math.floor(100 * inflation) && !isPulling ? 'hover:-translate-y-2 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`}
+             style={{ 
+               backgroundColor: coins >= Math.floor(100 * inflation) && !isPulling ? 'var(--yellow)' : '#d1d5db',
+               borderColor: 'var(--black)',
+               color: 'var(--black)',
+               boxShadow: coins >= Math.floor(100 * inflation) && !isPulling ? '4px 4px 0px 0px rgba(45,45,45,1)' : 'none'
+              }}
            >
-             1 PULL<br/><span className="text-sm bg-black text-white px-2 py-1 rounded mt-1 inline-block">{(Math.floor(100 * inflation)).toLocaleString()} Coin</span>
+             <span>1 PULL</span>
+             <span className="text-sm px-4 py-2 rounded-xl mt-1 block font-mono tracking-normal shadow-inner max-w-full overflow-hidden text-ellipsis whitespace-nowrap" style={{ backgroundColor: 'var(--black)', color: 'var(--white)' }}>{(Math.floor(100 * inflation)).toLocaleString()} Coin</span>
            </button>
            <button 
              onClick={pull10} disabled={coins < Math.floor(1000 * inflation) || isPulling}
-             className={`w-full sm:w-[160px] py-4 rounded-2xl border-4 border-black font-impact text-xl transition-all ${coins >= Math.floor(1000 * inflation) && !isPulling ? 'bg-pink-400 text-white hover:-translate-y-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}
+             className={`w-full sm:w-[180px] sm:min-w-0 md:min-w-[180px] lg:w-auto px-6 py-5 rounded-[24px] border-[4px] font-impact text-2xl transition-all leading-none flex flex-col items-center justify-center gap-2 ${coins >= Math.floor(1000 * inflation) && !isPulling ? 'hover:-translate-y-2 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`}
+             style={{ 
+               backgroundColor: coins >= Math.floor(1000 * inflation) && !isPulling ? 'var(--pink)' : '#d1d5db',
+               borderColor: 'var(--black)',
+               color: coins >= Math.floor(1000 * inflation) && !isPulling ? 'var(--white)' : 'var(--black)',
+               boxShadow: coins >= Math.floor(1000 * inflation) && !isPulling ? '4px 4px 0px 0px rgba(45,45,45,1)' : 'none'
+              }}
            >
-             10 PULL<br/><span className="text-sm bg-black text-white px-2 py-1 rounded mt-1 inline-block">{(Math.floor(1000 * inflation)).toLocaleString()} Coin</span>
+             <span>10 PULL</span>
+             <span className="text-sm px-4 py-2 rounded-xl mt-1 block font-mono tracking-normal shadow-inner max-w-full overflow-hidden text-ellipsis whitespace-nowrap" style={{ backgroundColor: 'var(--black)', color: 'var(--white)' }}>{(Math.floor(1000 * inflation)).toLocaleString()} Coin</span>
            </button>
          </div>
 
-         <div className="w-full h-56 border-4 border-dashed border-black rounded-2xl flex items-center justify-center relative bg-gray-50 overflow-hidden">
+         <div className="w-full h-64 border-[4px] border-dashed rounded-[32px] flex items-center justify-center relative overflow-hidden" style={{ borderColor: 'var(--black)', backgroundColor: 'var(--bg-color)' }}>
            {isPulling && (
              <motion.div 
                animate={{ rotate: [0, 10, -10, 10, -10, 0], scale: [1, 1.2, 1] }} 
@@ -800,7 +827,7 @@ function Game2_Gacha({ coins, setCoins, inventory, setInventory, inflation, setI
                initial={{ scale: 0, rotate: -180 }}
                animate={{ scale: 1, rotate: 0 }}
                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-               className={`absolute inset-4 rounded-xl border-4 border-black flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 ${rarityColors[pulledItem.rarity as keyof typeof rarityColors]}`}
+               className={`absolute inset-4 rounded-xl border-[4px] border-black flex flex-col items-center justify-center shadow-[4px_4px_0px_0px_rgba(45,45,45,1)] p-4 ${rarityColors[pulledItem.rarity as keyof typeof rarityColors]}`}
              >
                <div className="text-6xl mb-2 drop-shadow-md">{pulledItem.emoji}</div>
                <div className="font-impact text-2xl tracking-wider text-center leading-tight whitespace-pre-line">{pulledItem.name}</div>
@@ -841,36 +868,36 @@ function Game4_InventoryShop({ coins, setCoins, inventory, setInventory, activeB
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#b8e994] pt-12 items-center flex flex-col gap-6">
-      <div className="w-full max-w-4xl flex items-center justify-center gap-4 sm:gap-12 mb-4 border-b-4 border-black pb-4">
-        <button onClick={() => setTab('inventory')} className={`font-impact tracking-wider text-3xl sm:text-5xl transition-all ${tab === 'inventory' ? 'text-black drop-shadow-[2px_2px_0px_rgba(255,255,255,1)]' : 'text-black/30 hover:text-black/50'}`}>INVENTORY</button>
-        <button onClick={() => setTab('shop')} className={`font-impact tracking-wider text-3xl sm:text-5xl transition-all ${tab === 'shop' ? 'text-black drop-shadow-[2px_2px_0px_rgba(255,255,255,1)]' : 'text-black/30 hover:text-black/50'}`}>PASAR GELAP</button>
+    <div className="section md:col-span-12 pt-12 items-center flex flex-col gap-6" style={{ backgroundColor: 'var(--green)' }}>
+      <div className="w-full max-w-4xl flex items-center justify-center gap-4 sm:gap-12 mb-4 border-b-[4px] border-[var(--black)] pb-4">
+        <button onClick={() => setTab('inventory')} className={`font-impact tracking-wider text-3xl sm:text-5xl transition-all ${tab === 'inventory' ? 'text-[var(--white)] drop-shadow-[2px_2px_0px_rgba(45,45,45,1)]' : 'text-[var(--black)] opacity-50 hover:opacity-80'}`}>INVENTORY</button>
+        <button onClick={() => setTab('shop')} className={`font-impact tracking-wider text-3xl sm:text-5xl transition-all ${tab === 'shop' ? 'text-[var(--white)] drop-shadow-[2px_2px_0px_rgba(45,45,45,1)]' : 'text-[var(--black)] opacity-50 hover:opacity-80'}`}>PASAR GELAP</button>
       </div>
       
       {tab === 'inventory' && (
-        <div className="bg-black border-4 w-full border-black rounded-3xl p-4 sm:p-8 text-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-           <h3 className="font-impact text-2xl sm:text-3xl text-yellow-400 mb-6 flex flex-col sm:flex-row justify-between sm:items-end border-b-2 border-slate-800 pb-2 gap-2">
-             YOUR ITEMS <span className="text-sm font-mono text-gray-400 bg-gray-800 px-3 py-1 rounded-full w-fit">Total: {inventory.length} Item</span>
+        <div className="border-[4px] border-[var(--black)] w-full rounded-[32px] p-4 sm:p-8 text-[var(--white)] shadow-[8px_8px_0px_0px_rgba(45,45,45,1)]" style={{ backgroundColor: 'var(--black)' }}>
+           <h3 className="font-impact text-2xl sm:text-3xl text-[var(--yellow)] mb-6 flex flex-col sm:flex-row justify-between sm:items-end border-b-[4px] border-dashed border-[var(--white)] pb-4 gap-2">
+             YOUR ITEMS <span className="text-sm font-mono px-3 py-1 rounded-full w-fit text-[var(--black)]" style={{ backgroundColor: 'var(--white)' }}>Total: {inventory.length} Item</span>
            </h3>
            <div className="overflow-y-auto max-h-[500px] pr-2 custom-scrollbar grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-             {inventory.length === 0 && <p className="col-span-full text-center font-mono text-gray-500 mt-10">Kosong melompong, gacha dulu bos.</p>}
+             {inventory.length === 0 && <p className="col-span-full text-center font-mono mt-10" style={{ color: 'var(--white)', opacity: 0.8 }}>Kosong melompong, gacha dulu bos.</p>}
              {[...inventory].reverse().map((item, i) => (
-               <div key={item.id} className={`flex flex-col gap-3 p-4 rounded-xl border-2 border-gray-700 bg-gray-900 ${item.rarity === 'UR' || item.rarity === 'SSR' ? 'border-yellow-400 shadow-[0_0_15px_rgba(255,214,0,0.6)] relative z-10' : ''}`}>
+               <div key={item.id} className={`flex flex-col gap-3 p-4 rounded-xl border-[4px] border-[var(--black)] ${item.rarity === 'UR' || item.rarity === 'SSR' ? 'shadow-[4px_4px_0px_rgba(255,214,39,1)]' : 'shadow-[4px_4px_0px_rgba(255,255,255,1)]'}`} style={{ backgroundColor: '#404040' }}>
                  <div className="flex items-start justify-between">
-                   <div className={`w-14 h-14 rounded-lg flex flex-shrink-0 items-center justify-center text-3xl border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${rarityColors[item.rarity as keyof typeof rarityColors]}`}>
+                   <div className={`w-14 h-14 rounded-lg flex flex-shrink-0 items-center justify-center text-3xl border-[2px] border-[var(--black)] shadow-[2px_2px_0px_0px_rgba(45,45,45,1)] ${rarityColors[item.rarity as keyof typeof rarityColors]}`}>
                      {item.emoji}
                    </div>
-                   <div className={`font-impact text-sm px-2 rounded-sm border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] ${rarityColors[item.rarity as keyof typeof rarityColors]}`}>{item.rarity}</div>
+                   <div className={`font-impact text-sm px-2 rounded-sm border-[2px] border-[var(--black)] shadow-[2px_2px_0px_rgba(45,45,45,1)] ${rarityColors[item.rarity as keyof typeof rarityColors]}`}>{item.rarity}</div>
                  </div>
                  <div className="flex-1 mt-2">
-                   <div className={`font-display font-bold leading-tight line-clamp-1 ${item.rarity === 'UR' ? 'text-yellow-400' : 'text-white'}`}>{item.name}</div>
-                   <div className="font-mono text-xs text-green-400 mt-1 whitespace-pre-wrap">{item.desc || 'No effect'}</div>
+                   <div className={`font-display font-bold leading-tight line-clamp-1 ${item.rarity === 'UR' ? 'text-[var(--yellow)]' : 'text-[var(--white)]'}`}>{item.name}</div>
+                   <div className="font-mono text-sm leading-relaxed mt-1 whitespace-pre-wrap" style={{ color: 'var(--green)' }}>{item.desc || 'No effect'}</div>
                  </div>
-                 <div className="flex gap-2 w-full mt-2 border-t py-2 border-gray-800">
+                 <div className="flex gap-2 w-full mt-2 border-t-[4px] border-dashed pt-4" style={{ borderColor: 'var(--black)' }}>
                    {(item.type === 'instant' || item.type === 'buff') && (
-                     <button onClick={() => useItem(item)} className="flex-1 bg-green-500 text-white font-impact px-2 py-2 border-2 border-black rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-transform hover:translate-y-px active:translate-y-1 text-sm uppercase">USE</button>
+                     <button onClick={() => useItem(item)} className="flex-1 text-[var(--white)] font-impact px-2 py-2 border-[2px] border-[var(--black)] rounded-xl shadow-[2px_2px_0px_0px_rgba(45,45,45,1)] transition-transform hover:translate-y-px active:translate-y-1 text-sm uppercase" style={{ backgroundColor: 'var(--green)' }}>USE</button>
                    )}
-                   <button onClick={() => sellItem(item)} className="flex-1 bg-red-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-white font-impact px-2 py-2 rounded transition-transform hover:translate-y-px active:translate-y-1 text-sm uppercase">SELL ({item.sellPrice ? item.sellPrice.toLocaleString() : 0})</button>
+                   <button onClick={() => sellItem(item)} className="flex-1 border-[2px] border-[var(--black)] shadow-[2px_2px_0px_0px_rgba(45,45,45,1)] text-[var(--white)] font-impact px-2 py-2 rounded-xl transition-transform hover:translate-y-px active:translate-y-1 text-sm uppercase" style={{ backgroundColor: 'var(--red)' }}>SELL ({item.sellPrice ? item.sellPrice.toLocaleString() : 0})</button>
                  </div>
                </div>
              ))}
@@ -878,37 +905,37 @@ function Game4_InventoryShop({ coins, setCoins, inventory, setInventory, activeB
         </div>
       )}
       {tab === 'shop' && (
-        <div className="bg-white border-4 border-black w-full rounded-3xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center min-h-[400px] flex flex-col items-center justify-center">
-          <Store className="w-24 h-24 text-black mb-4 opacity-20" />
-          <h3 className="font-impact text-3xl sm:text-5xl mb-2 text-black text-center break-words uppercase">PASAR GELAP</h3>
-          <p className="font-mono font-bold opacity-60">Barang langka buat crazy rich doang.</p>
-          <div className="w-full max-w-2xl mt-8 grid gap-4 text-left">
-             <div className="p-4 border-4 border-black rounded-xl bg-purple-100 flex flex-col sm:flex-row justify-between items-center sm:items-start gap-4">
+        <div className="border-[4px] border-[var(--black)] w-full rounded-[32px] p-6 shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] text-center min-h-[400px] flex flex-col items-center justify-center" style={{ backgroundColor: 'var(--white)' }}>
+          <Store className="w-24 h-24 mb-4 opacity-20 text-[var(--black)]" />
+          <h3 className="font-impact text-3xl sm:text-5xl mb-2 text-[var(--black)] text-center break-words uppercase">PASAR GELAP</h3>
+          <p className="font-mono font-bold opacity-60 mb-2 leading-relaxed text-[var(--black)]">Barang langka buat crazy rich doang.</p>
+          <div className="w-full max-w-2xl mt-10 flex flex-col gap-6 text-left">
+             <div className="p-6 border-[4px] border-[var(--black)] rounded-[24px] flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6" style={{ backgroundColor: '#e9d5ff' }}>
                <div>
-                  <h4 className="font-impact text-2xl tracking-wide uppercase text-purple-600">Sertifikat Tanah PIK</h4>
-                  <p className="font-mono text-sm opacity-80 uppercase font-bold">+100,000 Coin / detik SELAMANYA</p>
+                  <h4 className="font-impact text-2xl tracking-wide uppercase" style={{ color: '#9333ea' }}>Sertifikat Tanah PIK</h4>
+                  <p className="font-mono text-sm leading-relaxed opacity-80 uppercase font-bold mt-2 text-[var(--black)]">+100,000 Coin / detik SELAMANYA</p>
                </div>
-               <button onClick={() => { if(coins >= Math.floor(500000 * inflation)) { setCoins((c:number) => c - Math.floor(500000 * inflation)); setInflation((i: number) => i + 0.1); setInventory((inv: any) => [...inv, {id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), name: 'Tanah PIK', type: 'asset', rarity: 'UR', emoji: '🏙️', desc: 'Pasif 100k coin/dtk'}]) } }} disabled={coins < Math.floor(500000 * inflation)} className={`whitespace-nowrap px-6 py-3 border-4 border-black font-impact text-xl transition-transform ${coins>=Math.floor(500000 * inflation) ? 'bg-yellow-400 hover:-translate-y-1 cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}>{(Math.floor(500000 * inflation)).toLocaleString()} Coin</button>
+               <button onClick={() => { if(coins >= Math.floor(500000 * inflation)) { setCoins((c:number) => c - Math.floor(500000 * inflation)); setInflation((i: number) => i + 0.1); setInventory((inv: any) => [...inv, {id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), name: 'Tanah PIK', type: 'asset', rarity: 'UR', emoji: '🏙️', desc: 'Pasif 100k coin/dtk'}]) } }} disabled={coins < Math.floor(500000 * inflation)} className={`whitespace-nowrap px-6 py-4 border-[4px] border-[var(--black)] font-impact text-xl transition-transform rounded-xl ${coins>=Math.floor(500000 * inflation) ? 'hover:-translate-y-1 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`} style={{ backgroundColor: coins>=Math.floor(500000 * inflation) ? 'var(--yellow)' : '#d1d5db', color: 'var(--black)' }}>{(Math.floor(500000 * inflation)).toLocaleString()} Coin</button>
              </div>
              
-             <div className="p-4 border-4 border-black rounded-xl bg-blue-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+             <div className="p-6 border-[4px] border-[var(--black)] rounded-[24px] flex flex-col sm:flex-row justify-between items-center gap-6" style={{ backgroundColor: '#dbeafe' }}>
                <div>
                   <h4 className="font-impact text-2xl tracking-wide uppercase text-blue-600">Auto Gacha 3000</h4>
-                  <p className="font-mono text-sm opacity-80 uppercase font-bold">Nge-gacha ampas otomatis</p>
+                  <p className="font-mono text-sm leading-relaxed opacity-80 uppercase font-bold mt-2 text-[var(--black)]">Nge-gacha ampas otomatis</p>
                </div>
-               <button onClick={() => { if(coins >= Math.floor(1000000 * inflation)) { setCoins((c:number) => c - Math.floor(1000000 * inflation)); setInflation((i: number) => i + 0.2); setInventory((inv: any) => [...inv, {id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), name: 'Auto Gacha 3000', type: 'asset', rarity: 'SSR', emoji: '🤖', desc: 'Auto Tarik Gacha'}]) } }} disabled={coins < Math.floor(1000000 * inflation)} className={`whitespace-nowrap px-6 py-3 border-4 border-black font-impact text-xl transition-transform ${coins>=Math.floor(1000000 * inflation) ? 'bg-yellow-400 hover:-translate-y-1 cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}>{(Math.floor(1000000 * inflation)).toLocaleString()} Coin</button>
+               <button onClick={() => { if(coins >= Math.floor(1000000 * inflation)) { setCoins((c:number) => c - Math.floor(1000000 * inflation)); setInflation((i: number) => i + 0.2); setInventory((inv: any) => [...inv, {id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), name: 'Auto Gacha 3000', type: 'asset', rarity: 'SSR', emoji: '🤖', desc: 'Auto Tarik Gacha'}]) } }} disabled={coins < Math.floor(1000000 * inflation)} className={`whitespace-nowrap px-6 py-4 border-[4px] border-[var(--black)] font-impact text-xl transition-transform rounded-xl ${coins>=Math.floor(1000000 * inflation) ? 'hover:-translate-y-1 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`} style={{ backgroundColor: coins>=Math.floor(1000000 * inflation) ? 'var(--yellow)' : '#d1d5db', color: 'var(--black)' }}>{(Math.floor(1000000 * inflation)).toLocaleString()} Coin</button>
              </div>
              
-             <div className="p-4 border-4 border-black rounded-xl bg-red-100 flex flex-col sm:flex-row justify-between items-center gap-4">
+             <div className="p-6 border-[4px] border-[var(--black)] rounded-[24px] flex flex-col sm:flex-row justify-between items-center gap-6" style={{ backgroundColor: '#fee2e2' }}>
                <div>
                   <h4 className="font-impact text-2xl tracking-wide uppercase text-red-600">REINKARNASI (HOLY TOKEN)</h4>
-                  <p className="font-mono text-sm opacity-80 uppercase font-bold">Membeli item x10 COIN MULTIPLIER SELAMANYA</p>
+                  <p className="font-mono text-sm leading-relaxed opacity-80 uppercase font-bold mt-2 text-[var(--black)]">Membeli item x10 COIN MULTIPLIER SELAMANYA</p>
                </div>
                <button onClick={() => { if(coins >= Math.floor(10000000 * inflation)) { 
                  setCoins((c: number) => c - Math.floor(10000000 * inflation));
                  setInflation((i: number) => i + 1.0);
                  setInventory((inv: any) => [...inv, {id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2), name: 'Holy Token', type: 'buff', rarity: 'UR', emoji: '🌟', buffDuration: 999999999, buffMultiplier: 10, desc: 'PERMANENT 10x COIN MULTIPLIER! (Equip on Use)'}]);
-               }}} disabled={coins < Math.floor(10000000 * inflation)} className={`whitespace-nowrap px-6 py-3 border-4 border-black font-impact text-xl transition-transform ${coins>=Math.floor(10000000 * inflation) ? 'bg-red-500 text-white hover:-translate-y-1 cursor-pointer' : 'bg-gray-300 opacity-60 cursor-not-allowed'}`}>{(Math.floor(10000000 * inflation)).toLocaleString()} Coin</button>
+               }}} disabled={coins < Math.floor(10000000 * inflation)} className={`whitespace-nowrap px-6 py-4 border-[4px] border-[var(--black)] font-impact text-xl transition-transform rounded-xl ${coins>=Math.floor(10000000 * inflation) ? 'hover:-translate-y-1 cursor-pointer' : 'opacity-60 cursor-not-allowed'}`} style={{ backgroundColor: coins>=Math.floor(10000000 * inflation) ? 'var(--red)' : '#d1d5db', color: coins>=Math.floor(10000000 * inflation) ? 'var(--white)' : 'var(--black)' }}>{(Math.floor(10000000 * inflation)).toLocaleString()} Coin</button>
              </div>
           </div>
         </div>
@@ -979,9 +1006,9 @@ function Game5_Market({ coins, setCoins, portfolio, setPortfolio }: any) {
   ] as const;
 
   return (
-    <div className="section md:col-span-12 bg-[#2c2c54] text-white flex flex-col items-center">
-      <h2 className="font-impact text-4xl sm:text-6xl text-yellow-400 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] uppercase text-center mb-4">BURSA SAHAM AMPAS</h2>
-      <p className="font-mono text-sm opacity-80 mb-8 tracking-widest text-center max-w-2xl bg-black/30 p-4 rounded-xl border-2 border-black">Beli saat merah, jual saat hijau. Update secara gaib tiap 5 detik. Ati-ati nyangkut bos.</p>
+    <div className="section md:col-span-12 flex flex-col items-center" style={{ backgroundColor: 'var(--pink)', color: 'var(--black)' }}>
+      <h2 className="font-impact text-4xl sm:text-6xl drop-shadow-[4px_4px_0px_rgba(45,45,45,1)] uppercase text-center mb-4 text-[var(--white)]">BURSA SAHAM AMPAS</h2>
+      <p className="font-mono text-base leading-relaxed opacity-80 mb-8 tracking-widest text-center max-w-2xl p-4 rounded-xl border-[4px] border-[var(--black)] bg-[var(--white)] text-[var(--black)] shadow-[4px_4px_0px_0px_rgba(45,45,45,1)]">Beli saat merah, jual saat hijau. Update secara gaib tiap 5 detik. Ati-ati nyangkut bos.</p>
       
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         {stocks.map(s => {
@@ -991,29 +1018,29 @@ function Game5_Market({ coins, setCoins, portfolio, setPortfolio }: any) {
           const trend = trends[t];
           
           return (
-            <div key={t} className="bg-white text-black border-4 border-black rounded-2xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col transition-transform hover:-translate-y-1">
-              <div className="flex justify-between items-start border-b-4 border-gray-200 pb-4 mb-4">
+            <div key={t} className="bg-[var(--white)] text-[var(--black)] border-[4px] rounded-[24px] p-6 shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] flex flex-col transition-transform hover:-translate-y-1" style={{ borderColor: 'var(--black)' }}>
+              <div className="flex justify-between items-start border-b-[4px] pb-4 mb-4" style={{ borderColor: 'var(--black)' }}>
                 <div>
                   <h3 className="font-impact text-3xl">{s.emoji} {s.id}</h3>
-                  <p className="font-mono text-xs opacity-60 font-bold uppercase">{s.name}</p>
+                  <p className="font-mono text-sm leading-relaxed opacity-60 font-bold uppercase">{s.name}</p>
                 </div>
-                <div className={`font-impact text-3xl px-4 py-2 rounded-xl border-4 shadow-[4px_4px_0px_rgba(0,0,0,1)] ${trend >= 0 ? 'bg-green-400 border-black' : 'bg-red-400 text-white border-black'}`}>
+                <div className={`font-impact text-3xl px-4 py-2 rounded-xl border-[4px] shadow-[4px_4px_0px_rgba(45,45,45,1)] ${trend >= 0 ? 'text-[var(--black)]' : 'text-[var(--white)]'}`} style={{ borderColor: 'var(--black)', backgroundColor: trend >= 0 ? 'var(--green)' : 'var(--red)' }}>
                   {trend >= 0 ? '▲' : '▼'} {currentPrice.toLocaleString()}
                 </div>
               </div>
               
-              <div className="bg-gray-100 p-4 rounded-xl border-4 border-black mb-6 font-mono space-y-2 mt-auto">
-                <div className="flex justify-between text-sm"><span>Lots Owned:</span> <span className="font-bold text-lg">{shares.toLocaleString()}</span></div>
-                <div className="flex justify-between text-sm"><span>Avg Price:</span> <span className="font-bold opacity-70">{Math.floor(portfolio[t].avgPrice).toLocaleString()}</span></div>
-                <div className="h-0.5 bg-gray-300 w-full my-2"></div>
-                <div className="flex justify-between text-sm items-center"><span>Est. Value:</span> <span className="font-bold text-blue-600 text-xl tracking-tight">{(shares * currentPrice).toLocaleString()}</span></div>
+              <div className="p-5 rounded-2xl border-[4px] mb-8 font-mono text-base leading-relaxed space-y-4 mt-auto" style={{ borderColor: 'var(--black)', backgroundColor: 'var(--bg-color)' }}>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center text-sm gap-1"><span>Lots Owned:</span> <span className="font-bold text-xl sm:text-lg lg:text-xl break-all">{shares.toLocaleString()}</span></div>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-center text-sm gap-1"><span>Avg Price:</span> <span className="font-bold opacity-70 text-lg sm:text-base lg:text-lg break-all">{Math.floor(portfolio[t].avgPrice).toLocaleString()}</span></div>
+                <div className="h-1 w-full my-3" style={{ backgroundColor: 'var(--black)' }}></div>
+                <div className="flex flex-col justify-between text-sm gap-1"><span>Est. Value:</span> <span className="font-bold text-3xl sm:text-2xl lg:text-3xl tracking-tight break-all" style={{ color: 'var(--blue)' }}>{(shares * currentPrice).toLocaleString()}</span></div>
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mt-auto">
-                <button disabled={coins < currentPrice} onClick={() => buyStock(t, 1)} className="bg-green-400 border-4 border-black font-impact py-3 rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-black hover:bg-green-300 text-xl">BUY 1</button>
-                <button disabled={shares < 1} onClick={() => sellStock(t, 1)} className="bg-red-500 text-white border-4 border-black font-impact py-3 rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all hover:bg-red-400 text-xl">SELL 1</button>
-                <button disabled={coins < currentPrice * 10} onClick={() => buyStock(t, 10)} className="bg-green-400 border-4 border-black font-impact py-3 rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-black hover:bg-green-300 text-xl">BUY 10</button>
-                <button disabled={shares < 10} onClick={() => sellStock(t, 10)} className="bg-red-500 text-white border-4 border-black font-impact py-3 rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all hover:bg-red-400 text-xl">SELL 10</button>
+              <div className="grid grid-cols-2 gap-4 mt-auto">
+                <button disabled={coins < currentPrice} onClick={() => buyStock(t, 1)} className="border-[4px] font-impact py-4 rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-[var(--black)] text-xl leading-none" style={{ backgroundColor: 'var(--green)', borderColor: 'var(--black)' }}>BUY 1</button>
+                <button disabled={shares < 1} onClick={() => sellStock(t, 1)} className="text-[var(--white)] border-[4px] font-impact py-4 rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-xl leading-none" style={{ backgroundColor: 'var(--red)', borderColor: 'var(--black)' }}>SELL 1</button>
+                <button disabled={coins < currentPrice * 10} onClick={() => buyStock(t, 10)} className="border-[4px] font-impact py-4 rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-[var(--black)] text-xl leading-none" style={{ backgroundColor: 'var(--green)', borderColor: 'var(--black)' }}>BUY 10</button>
+                <button disabled={shares < 10} onClick={() => sellStock(t, 10)} className="text-[var(--white)] border-[4px] font-impact py-4 rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none transition-all text-xl leading-none" style={{ backgroundColor: 'var(--red)', borderColor: 'var(--black)' }}>SELL 10</button>
               </div>
             </div>
           );
@@ -1047,44 +1074,44 @@ function Game6_Bank({ coins, setCoins, bankBalance, setBankBalance }: any) {
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#fab1a0] items-center flex flex-col gap-6">
-      <h2 className="font-impact text-4xl sm:text-6xl text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] uppercase tracking-wider text-center">BANK CENTRAL COIN</h2>
-      <p className="font-mono font-bold opacity-80 mb-4 bg-white px-4 py-2 rounded-xl border-4 border-black text-center max-w-2xl text-black shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+    <div className="section md:col-span-12 items-center flex flex-col gap-6" style={{ backgroundColor: 'var(--blue)' }}>
+      <h2 className="font-impact text-4xl sm:text-6xl text-[var(--white)] drop-shadow-[4px_4px_0px_rgba(45,45,45,1)] uppercase tracking-wider text-center">BANK CENTRAL COIN</h2>
+      <p className="font-mono text-base leading-relaxed font-bold opacity-80 mb-4 px-4 py-2 rounded-xl border-[4px] text-center max-w-2xl shadow-[4px_4px_0px_rgba(45,45,45,1)]" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)', color: 'var(--black)' }}>
         Simpan coin di sini. Dapat bunga 5% setiap 30 detik secara otomatis.
       </p>
 
-      <div className="w-full max-w-2xl bg-white border-4 border-black rounded-3xl p-6 sm:p-10 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mb-8">
-        <div className="text-center mb-10 border-b-4 border-dashed border-gray-300 pb-8 text-black">
+      <div className="w-full max-w-2xl rounded-[32px] p-6 sm:p-10 border-[4px] shadow-[8px_8px_0px_0px_rgba(45,45,45,1)] mb-8" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>
+        <div className="text-center mb-10 border-b-[4px] border-dashed pb-8 text-[var(--black)]" style={{ borderColor: 'var(--black)' }}>
           <p className="font-mono opacity-60 uppercase font-bold mb-2 tracking-widest">Saldo Deposito</p>
-          <div className="bg-gray-100 border-4 border-black rounded-2xl py-6 px-4 shadow-[inset_4px_4px_0px_rgba(0,0,0,0.05)]">
-            <p className="font-impact text-5xl sm:text-7xl text-blue-600 break-words drop-shadow-[2px_2px_0px_rgba(0,0,0,0.1)]">💰 {bankBalance.toLocaleString()}</p>
+          <div className="rounded-[24px] py-6 px-4 shadow-[inset_4px_4px_0px_rgba(45,45,45,0.05)] border-[4px]" style={{ backgroundColor: 'var(--bg-color)', borderColor: 'var(--black)' }}>
+            <p className="font-impact text-4xl sm:text-6xl lg:text-7xl break-all drop-shadow-[2px_2px_0px_rgba(45,45,45,1)] leading-tight" style={{ color: 'var(--yellow)' }}>💰 {bankBalance.toLocaleString()}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-green-50 border-4 border-black p-5 rounded-2xl text-black shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col">
-            <h4 className="font-impact text-2xl text-green-600 mb-4 border-b-2 border-green-200 pb-2">DEPOSIT IN</h4>
-            <div className="flex flex-col gap-3 flex-1">
-              <input type="number" value={depositAmount} onChange={e => setDepositAmount(e.target.value)} placeholder="0" className="w-full border-4 border-black rounded-xl p-3 font-mono text-xl text-center shadow-[inset_2px_2px_0px_rgba(0,0,0,0.1)] focus:outline-none focus:border-green-500" />
-              <button onClick={handleDeposit} className="w-full bg-green-400 border-4 border-black font-impact py-4 text-2xl rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform whitespace-nowrap active:translate-y-0 hover:bg-green-300">MODALIN</button>
+          <div className="border-[4px] p-6 rounded-[24px] text-[var(--black)] shadow-[4px_4px_0px_rgba(45,45,45,1)] flex flex-col" style={{ backgroundColor: '#dcfce7', borderColor: 'var(--black)' }}>
+            <h4 className="font-impact text-2xl mb-6 border-b-[4px] pb-4" style={{ color: '#16a34a', borderColor: 'var(--black)' }}>DEPOSIT IN</h4>
+            <div className="flex flex-col gap-4 flex-1">
+              <input type="number" value={depositAmount} onChange={e => setDepositAmount(e.target.value)} placeholder="0" className="w-full border-[4px] rounded-2xl p-4 font-mono text-xl text-center shadow-[inset_2px_2px_0px_rgba(45,45,45,0.1)] focus:outline-none" style={{ borderColor: 'var(--black)' }} />
+              <button onClick={handleDeposit} className="w-full border-[4px] font-impact py-5 text-2xl rounded-2xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 transition-transform whitespace-nowrap active:translate-y-0 leading-none" style={{ backgroundColor: 'var(--green)', borderColor: 'var(--black)' }}>MODALIN</button>
             </div>
-            <div className="mt-4 text-sm font-mono opacity-60 bg-white border-2 border-black rounded-lg p-2 text-center">Di Dompet: {Math.floor(coins).toLocaleString()}</div>
-            <div className="flex gap-2 mt-2">
-               <button onClick={() => setDepositAmount(Math.floor(coins * 0.5).toString())} className="flex-1 text-sm font-bold bg-white border-2 border-black py-2 rounded-lg hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">50%</button>
-               <button onClick={() => setDepositAmount(Math.floor(coins).toString())} className="flex-1 text-sm font-bold bg-white border-2 border-black py-2 rounded-lg hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">MAX</button>
+            <div className="mt-6 text-sm font-mono font-bold opacity-80 border-[4px] rounded-xl py-3 px-2 text-center" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>Di Dompet: <br className="sm:hidden"/>{Math.floor(coins).toLocaleString()}</div>
+            <div className="flex gap-3 mt-3">
+               <button onClick={() => setDepositAmount(Math.floor(coins * 0.5).toString())} className="flex-1 text-sm font-bold border-[4px] py-3 rounded-xl transition-colors shadow-[2px_2px_0px_rgba(45,45,45,1)] active:translate-y-1 active:shadow-none hover:bg-gray-200" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>50%</button>
+               <button onClick={() => setDepositAmount(Math.floor(coins).toString())} className="flex-1 text-sm font-bold border-[4px] py-3 rounded-xl transition-colors shadow-[2px_2px_0px_rgba(45,45,45,1)] active:translate-y-1 active:shadow-none hover:bg-gray-200" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>MAX</button>
             </div>
           </div>
 
-          <div className="bg-red-50 border-4 border-black p-5 rounded-2xl text-black shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col">
-            <h4 className="font-impact text-2xl text-red-600 mb-4 border-b-2 border-red-200 pb-2">WITHDRAW OUT</h4>
-            <div className="flex flex-col gap-3 flex-1">
-              <input type="number" value={withdrawAmount} onChange={e => setWithdrawAmount(e.target.value)} placeholder="0" className="w-full border-4 border-black rounded-xl p-3 font-mono text-xl text-center shadow-[inset_2px_2px_0px_rgba(0,0,0,0.1)] focus:outline-none focus:border-red-500" />
-              <button onClick={handleWithdraw} className="w-full bg-red-500 text-white border-4 border-black font-impact py-4 text-2xl rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform whitespace-nowrap active:translate-y-0 hover:bg-red-400">TARIK</button>
+          <div className="border-[4px] p-6 rounded-[24px] text-[var(--black)] shadow-[4px_4px_0px_rgba(45,45,45,1)] flex flex-col" style={{ backgroundColor: '#fee2e2', borderColor: 'var(--black)' }}>
+            <h4 className="font-impact text-2xl mb-6 border-b-[4px] pb-4" style={{ color: '#dc2626', borderColor: 'var(--black)' }}>WITHDRAW OUT</h4>
+            <div className="flex flex-col gap-4 flex-1">
+              <input type="number" value={withdrawAmount} onChange={e => setWithdrawAmount(e.target.value)} placeholder="0" className="w-full border-4 border-black rounded-2xl p-4 font-mono text-xl text-center shadow-[inset_2px_2px_0px_rgba(0,0,0,0.1)] focus:outline-none focus:border-red-500" />
+              <button onClick={handleWithdraw} className="w-full bg-red-500 text-white border-4 border-black font-impact py-5 text-2xl rounded-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform whitespace-nowrap active:translate-y-0 hover:bg-red-400 leading-none">TARIK</button>
             </div>
-            <div className="mt-4 text-sm font-mono opacity-60 bg-white border-2 border-black rounded-lg p-2 text-center flex gap-2 invisible h-9"></div>
-            <div className="flex gap-2 mt-2">
-               <button onClick={() => setWithdrawAmount(Math.floor(bankBalance * 0.5).toString())} className="flex-1 text-sm font-bold bg-white border-2 border-black py-2 rounded-lg hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">50%</button>
-               <button onClick={() => setWithdrawAmount(Math.floor(bankBalance).toString())} className="flex-1 text-sm font-bold bg-white border-2 border-black py-2 rounded-lg hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">MAX</button>
+            <div className="mt-6 text-sm font-mono opacity-0 border-4 border-transparent rounded-xl py-3 px-2 text-center"> invisible placeholder </div>
+            <div className="flex gap-3 mt-3">
+               <button onClick={() => setWithdrawAmount(Math.floor(bankBalance * 0.5).toString())} className="flex-1 text-sm font-bold bg-white border-[4px] border-black py-3 rounded-xl hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">50%</button>
+               <button onClick={() => setWithdrawAmount(Math.floor(bankBalance).toString())} className="flex-1 text-sm font-bold bg-white border-[4px] border-black py-3 rounded-xl hover:bg-gray-100 transition-colors shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">MAX</button>
             </div>
           </div>
         </div>
@@ -1142,25 +1169,26 @@ function Game7_Franchise({ coins, setCoins, franchises, setFranchises, inflation
   };
 
   return (
-    <div className="section md:col-span-12 bg-[#fdcb6e] items-center flex flex-col gap-6">
-      <h2 className="font-impact text-4xl sm:text-6xl text-red-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] uppercase tracking-wider text-center">JURAGAN FRANCHISE</h2>
-      <div className="bg-white border-4 border-black p-4 rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] max-w-2xl text-center font-mono">
-        <p className="font-bold opacity-80 mb-2">Beli franchise, dapat pasif income, TAPI AWAS BANGKRUT!</p>
-        <p className="opacity-60 text-sm">Kamu harus bayar biaya maintenance sebelum 60 detik. Kalau nggak, usahamu <b>TUTUP SELAMANYA</b>.</p>
-        <p className="mt-2 text-red-600 font-bold bg-red-100 p-2 rounded border-2 border-red-500">INFLASI SAAT INI: <b>{Math.floor((inflation - 1) * 100)}%</b> (Makin sering beli, makin mahal!)</p>
+    <div className="section md:col-span-12 items-center flex flex-col gap-6" style={{ backgroundColor: 'var(--bg-color)' }}>
+      <h2 className="font-impact text-4xl sm:text-6xl drop-shadow-[4px_4px_0px_rgba(45,45,45,1)] uppercase tracking-wider text-center" style={{ color: 'var(--red)' }}>JURAGAN FRANCHISE</h2>
+      <div className="border-[4px] p-4 rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] max-w-2xl text-center font-mono" style={{ backgroundColor: 'var(--white)', borderColor: 'var(--black)' }}>
+        <p className="font-bold mb-3 text-[var(--black)] leading-relaxed">Beli franchise, dapat pasif income, TAPI AWAS BANGKRUT!</p>
+        <p className="opacity-80 text-base text-[var(--black)] leading-relaxed">Kamu harus bayar biaya maintenance sebelum 60 detik. Kalau nggak, usahamu <b>TUTUP SELAMANYA</b>.</p>
+        <p className="mt-4 font-bold p-3 rounded border-[2px]" style={{ backgroundColor: 'var(--red)', color: 'var(--white)', borderColor: 'var(--black)' }}>INFLASI SAAT INI: <b>{Math.floor((inflation - 1) * 100)}%</b><br/><span className="text-sm font-normal">(Makin sering beli, makin mahal!)</span></p>
       </div>
 
       <div className="w-full flex-wrap flex gap-6 justify-center">
         {franchiseTypes.map(t => {
           const actualCost = Math.floor(t.buyPrice * inflation);
           return (
-            <div key={t.typeId} className="bg-[#ffeaa7] border-4 border-black p-4 inline-flex flex-col rounded-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] w-full sm:w-64">
-              <h3 className="font-impact text-2xl">{t.emoji} {t.name}</h3>
-              <p className="font-mono text-sm opacity-60 mb-4">+{(t.revenue).toLocaleString()} coin/sec</p>
+            <div key={t.typeId} className="border-[4px] p-4 inline-flex flex-col rounded-2xl shadow-[4px_4px_0px_rgba(45,45,45,1)] w-full sm:w-64" style={{ backgroundColor: 'var(--yellow)', borderColor: 'var(--black)' }}>
+              <h3 className="font-impact text-2xl text-[var(--black)]">{t.emoji} {t.name}</h3>
+              <p className="font-mono text-sm leading-relaxed opacity-80 mb-4 text-[var(--black)]">+{(t.revenue).toLocaleString()} coin/sec</p>
               <button 
                 onClick={() => buyFranchise(t)} 
                 disabled={coins < actualCost}
-                className="mt-auto bg-green-400 border-4 border-black font-impact py-2 text-xl rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 transition-all text-black hover:bg-green-300"
+                className="mt-auto border-[4px] font-impact py-2 text-xl rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 transition-all text-[var(--black)]"
+                style={{ backgroundColor: 'var(--green)', borderColor: 'var(--black)' }}
               >
                 BUKA (💰 {actualCost.toLocaleString()})
               </button>
@@ -1170,31 +1198,32 @@ function Game7_Franchise({ coins, setCoins, franchises, setFranchises, inflation
       </div>
 
       {franchises.length > 0 && (
-        <div className="w-full mt-8 border-t-4 border-black pt-8">
-          <h3 className="font-impact text-3xl mb-4 text-center">ASET FRANCHISE KAMU</h3>
+        <div className="w-full mt-8 border-t-[4px] pt-8" style={{ borderColor: 'var(--black)' }}>
+          <h3 className="font-impact text-3xl mb-4 text-center text-[var(--black)]">ASET FRANCHISE KAMU</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {franchises.map((f: any) => {
                const timeAlive = Math.max(0, 60 - Math.floor((Date.now() - f.lastMaintained) / 1000));
                const actualMaintCost = Math.floor(f.maintCost * inflation);
                return (
-                 <div key={f.id} className={`p-4 border-4 border-black rounded-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] flex flex-col ${f.isBankrupt ? 'bg-gray-400 grayscale' : 'bg-white'}`}>
+                 <div key={f.id} className={`p-4 border-[4px] rounded-2xl shadow-[4px_4px_0px_rgba(45,45,45,1)] flex flex-col ${f.isBankrupt ? 'grayscale' : ''}`} style={{ backgroundColor: f.isBankrupt ? '#9ca3af' : 'var(--white)', borderColor: 'var(--black)' }}>
                     <div className="flex justify-between items-start mb-2">
-                       <h4 className="font-impact text-xl">{f.emoji} {f.name}</h4>
+                       <h4 className="font-impact text-xl text-[var(--black)]">{f.emoji} {f.name}</h4>
                        {f.isBankrupt ? (
-                         <span className="bg-red-600 text-white font-impact px-2 py-1 border-2 border-black rounded">BANGKRUT</span>
+                         <span className="font-impact px-2 py-1 border-[2px] rounded" style={{ backgroundColor: 'var(--red)', color: 'var(--white)', borderColor: 'var(--black)' }}>BANGKRUT</span>
                        ) : (
-                         <span className={`font-mono font-bold px-2 py-1 border-2 border-black flex items-center justify-center rounded ${timeAlive < 15 ? 'bg-red-400 text-white animate-pulse' : 'bg-green-300 text-black'}`}>
+                         <span className={`font-mono font-bold px-2 py-1 border-[2px] flex items-center justify-center rounded ${timeAlive < 15 ? 'animate-pulse text-[var(--white)]' : 'text-[var(--black)]'}`} style={{ backgroundColor: timeAlive < 15 ? 'var(--red)' : 'var(--green)', borderColor: 'var(--black)' }}>
                            ⏳ {timeAlive}s
                          </span>
                        )}
                     </div>
                     {!f.isBankrupt && (
-                      <p className="font-mono text-sm mb-4 bg-gray-100 p-2 border-2 border-black rounded">Revenue: +{(f.revenue).toLocaleString()}/s</p>
+                      <p className="font-mono text-sm mb-4 p-2 border-[2px] rounded text-[var(--black)]" style={{ backgroundColor: 'var(--bg-color)', borderColor: 'var(--black)' }}>Revenue: +{(f.revenue).toLocaleString()}/s</p>
                     )}
                     <button 
                       onClick={() => maintainFranchise(f)} 
                       disabled={f.isBankrupt || coins < actualMaintCost}
-                      className="mt-auto bg-blue-400 text-white border-4 border-black font-impact py-2 text-xl rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 transition-all hover:bg-blue-300 disabled:shadow-none"
+                      className="mt-auto border-[4px] font-impact py-2 text-xl rounded-xl shadow-[4px_4px_0px_rgba(45,45,45,1)] hover:-translate-y-1 active:translate-y-0 disabled:opacity-40 disabled:hover:translate-y-0 transition-all text-[var(--white)] disabled:shadow-none"
+                      style={{ backgroundColor: 'var(--blue)', borderColor: 'var(--black)' }}
                     >
                       MAINTENANCE (💰 {actualMaintCost.toLocaleString()})
                     </button>
